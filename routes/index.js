@@ -42,7 +42,8 @@ module.exports = function(app) {
         client.makeCall({
             to: request.body.phoneNumber,
             from: config.twilioNumber,
-            url: url
+            url: url,
+            method: "GET"
         }, function(err, message) {
             console.log(err);
             if (err) {
@@ -56,7 +57,7 @@ module.exports = function(app) {
     });
 
     // Return TwiML instuctions for the outbound call
-    app.post('/outbound', function(request, response) {
+    app.get('/outbound', function(request, response) {
         // We could use twilio.TwimlResponse, but Jade works too - here's how
         // we would render a TwiML (XML) response using Jade
         response.type('text/xml');
