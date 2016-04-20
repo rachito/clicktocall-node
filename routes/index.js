@@ -35,7 +35,7 @@ module.exports = function(app) {
         // This should be the publicly accessible URL for your application
         // Here, we just use the host for the application making the request,
         // but you can hard code it or use something different if need be
-        var url = 'http://' + request.headers.host + '/outbound/%2B5219999682089';
+        var url = 'http://' + request.headers.host + '/outbound/%2B5219991279455';
         
         // Place an outbound call to the user, using the TwiML instructions
         // from the /outbound route
@@ -50,7 +50,7 @@ module.exports = function(app) {
                 response.status(500).send(err);
             } else {
                 response.send({
-                    message: 'Te llamamos en un momento'
+                    message: 'En un momento te contactamos'
                 });
             }
         });
