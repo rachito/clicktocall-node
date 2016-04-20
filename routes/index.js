@@ -35,7 +35,7 @@ module.exports = function(app) {
         // This should be the publicly accessible URL for your application
         // Here, we just use the host for the application making the request,
         // but you can hard code it or use something different if need be
-        var url = 'http://' + request.headers.host + '/outbound';
+        var url = 'http://' + request.headers.host + '/outbound/%2B5219991279455';
         
         // Place an outbound call to the user, using the TwiML instructions
         // from the /outbound route
@@ -50,18 +50,18 @@ module.exports = function(app) {
                 response.status(500).send(err);
             } else {
                 response.send({
-                    message: 'Thank you! We will be calling you shortly.'
+                    message: 'Te llamamos en un momento'
                 });
             }
         });
     });
 
     // Return TwiML instuctions for the outbound call
-    app.get('/outbound', function(request, response) {
+    app.get('/outbound/:number', function(request, response) {
         // We could use twilio.TwimlResponse, but Jade works too - here's how
         // we would render a TwiML (XML) response using Jade
         response.type('text/xml');
-        response.render('outbound', {driverNumber: '+5219991279455'});
+        response.render('outbound', {number: request.params.number});
     });
 };
 
