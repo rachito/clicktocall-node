@@ -13,7 +13,7 @@ Step-by-step on how to deploy, configure and develop on this example app.
 
 Use Heroku to deploy this app immediately.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/TwilioDevEd/clicktocall-node)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/rachito/clicktocall-node)
 
 ### Getting Started
 
